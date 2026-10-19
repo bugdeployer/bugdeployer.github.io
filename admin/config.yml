@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jowe1911/jowe-site
+  repo: mjowdev/jowe-site
   branch: main
 media_folder: public/uploads
 public_folder: /uploads
