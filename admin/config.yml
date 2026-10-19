@@ -1,0 +1,63 @@
+backend:
+  name: github
+  repo: jowe1911/jowe-site
+  branch: main
+media_folder: public/uploads
+public_folder: /uploads
+collections:
+  - name: posts
+    label: Blog posts
+    folder: content/posts
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Date, name: date, widget: datetime, format: 'YYYY-MM-DD', time_format: false}
+      - {label: Summary, name: excerpt, widget: text}
+      - {label: Category, name: tag, widget: string, default: Updates}
+      - {label: Published, name: published, widget: boolean, default: false}
+      - {label: Body, name: body, widget: markdown}
+  - name: site
+    label: Site content
+    files:
+      - name: settings
+        label: Profile, socials & affiliates
+        file: content/settings.json
+        fields:
+          - {label: Name, name: name, widget: string}
+          - {label: Headline, name: headline, widget: text}
+          - {label: Introduction, name: intro, widget: text}
+          - {label: About, name: about, widget: text}
+          - {label: Currently working on, name: now, widget: text}
+          - {label: Support message, name: support, widget: text}
+          - label: Social links
+            name: socials
+            widget: list
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: URL, name: url, widget: string, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
+          - label: Affiliate links
+            name: affiliates
+            widget: list
+            required: false
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: URL, name: url, widget: string, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
+              - {label: Description, name: description, widget: text, required: false}
+      - name: projects
+        label: Projects
+        file: content/projects.json
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Tagline, name: tagline, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Status, name: status, widget: string}
+              - {label: Platform, name: platform, widget: string}
+              - {label: License or price, name: license, widget: string}
+              - {label: Project URL, name: url, widget: string, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
+              - {label: Download URL, name: download, widget: string, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
+              - {label: Features, name: features, widget: list}
