@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: mjowdev/jowe-site
+  repo: bugdeployer/jowe-site
   branch: main
 media_folder: public/uploads
-public_folder: /uploads
+public_folder: /mjowdev.github.io/uploads
 collections:
   - name: posts
     label: Blog posts
@@ -57,7 +57,7 @@ collections:
               - {label: Description, name: description, widget: text}
               - {label: Status, name: status, widget: string}
               - {label: Platform, name: platform, widget: string}
-              - {label: License or price, name: license, widget: string}
-              - {label: Project URL, name: url, widget: string, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
-              - {label: Download URL, name: download, widget: string, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
+              - {label: Compatibility, name: license, widget: string}
+              - {label: Project URL, name: url, widget: string}
+              - {label: Download URL, name: download, widget: string, required: false, pattern: ['^https://.+', 'Use a full HTTPS URL.']}
               - {label: Features, name: features, widget: list}
