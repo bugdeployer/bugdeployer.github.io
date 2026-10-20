@@ -3,7 +3,7 @@ backend:
   repo: bugdeployer/jowe-site
   branch: main
 media_folder: public/uploads
-public_folder: /mjowdev.github.io/uploads
+public_folder: /uploads
 collections:
   - name: posts
     label: Blog posts
